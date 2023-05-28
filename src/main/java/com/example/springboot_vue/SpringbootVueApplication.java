@@ -15,7 +15,7 @@ public class SpringbootVueApplication {
 	}
 	@GetMapping("/hello")
 	public String hello(@RequestParam(value = "name", defaultValue = "mini-admin") String name) {
-		return String.format("欢迎来到"+name+"的世界！");
+		return String.format("欢迎来到"+name+"！");
 	}
 
 }
