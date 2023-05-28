@@ -6,8 +6,8 @@ import lombok.Data;
 public class User {
     private Long id;
     private  String name;
-    private  String gender;
     private Long age;
+    private  String gender;
     private  Long tel;
     private  String address;
 
