@@ -15,7 +15,8 @@ public class UserService {
     public List<User> findAll() {
         return userMapper.findAll();
     }
-    public User getUserById(int id) {
+
+    public List<User> getUserById(int id) {
         return userMapper.getUserById(id);
     }
 
@@ -23,8 +24,8 @@ public class UserService {
         userMapper.insertUser(user);
     }
 
-    public void updateUser(User user) {
-        userMapper.updateUser(user);
+    public Integer updateUser(User user) {
+        return userMapper.updateUser(user);
     }
 
     public void deleteUserById(int id) {

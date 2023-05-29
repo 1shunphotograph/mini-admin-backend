@@ -9,6 +9,5 @@ public class User {
     private Long age;
     private  String gender;
     private  Long tel;
-    private  String address;
 
 }
