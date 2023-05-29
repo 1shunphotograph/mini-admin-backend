@@ -14,29 +14,35 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserService userService;
-    String message = "";
-    @GetMapping ("/all")
-    public List<User> findAll(){
+
+    //    String message = "";
+    @GetMapping("/all")
+    public List<User> findAll() {
         return userService.findAll();
     }
-    @GetMapping ("/id")
+
+    @GetMapping("/id")
     public List<User> getUserById(@Param("id") int id) {
         return userService.getUserById(id);
     }
+
     @PostMapping("/add")
     public void insertUser(User user) {
         userService.insertUser(user);
     }
+
     @PutMapping("/update")
-    public String updateUser(@RequestBody User user) {
-        userService.updateUser(user);
-        try {
-            message = userService.updateUser(user) == 1?"更新用户成功":"用户不存在，更新失败";
-        }catch (Exception exception){
-            message = "更新异常";
-        }
-        return message;
+    public Integer updateUser(@RequestBody User user) {
+        return userService.updateUser(user);
+
+//        try {
+//            message = userService.updateUser(user) == 1?"更新用户成功":"用户不存在，更新失败";
+//        }catch (Exception exception){
+//            message = "更新异常";
+//        }
+//        return message;
     }
+
     @DeleteMapping("/id")
     public void deleteUserById(@Param("id") int id) {
         userService.deleteUserById(id);
